@@ -29,3 +29,34 @@ if(document.getElementById("image") !== null){
            
         });
     }
+    if(document.getElementById("button") !== null){
+        //Desafio parte 2
+        let inputs = document.querySelector("button");
+            
+            inputs.addEventListener("click", (e)=>{
+             
+               
+                let value = document.getElementById("num1").value;
+                let value1 = document.getElementById("num2").value;
+                let value2 = document.getElementById("num3").value;
+                console.log(value1)
+                let value3 = parseFloat(value) + parseFloat(value1) + parseFloat(value2)
+             console.log(value3)
+             
+           
+             if(isNaN(value) || isNaN(value1) || isNaN(value2)){
+                alert("Error, favor ingresar solo números")
+                return;
+             }else if(value3 > 10){
+                
+                document.querySelector("#textResult").innerHTML= "Llevas demasiados stickers";
+                document.querySelector("#total").innerHTML= value3;
+                
+             }else{
+                document.querySelector("#textResult").innerHTML= "¡Perfecto!";
+                document.querySelector("#total").innerHTML= value3;
+              
+             }
+           
+            })
+             }
