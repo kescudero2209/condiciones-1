@@ -60,3 +60,30 @@ if(document.getElementById("image") !== null){
            
             })
              }
+             if(document.getElementById("try") !== null){
+                let inputs = document.querySelector("form");
+
+inputs.addEventListener("submit", (e) => {
+  e.preventDefault();
+  let data = new FormData(inputs);
+  let num1 = data.get("num1");
+  let num2 = data.get("num2");
+  let num3 = data.get("num3");
+
+  console.log(num1);
+  console.log(num2);
+  console.log(num3);
+var total = num1 + num2 + num3
+     console.log(total)
+
+     if(total=="911"){
+     
+         document.querySelector("#result").innerHTML= "password 1 correcto";
+     }else if(total=="714"){
+         document.querySelector("#result").innerHTML= "password 2 correcto";
+     }else{
+         document.querySelector("#result").innerHTML= "incorrecto";
+     }
+     inputs.reset();
+     })
+              }
